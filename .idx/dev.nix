@@ -5,8 +5,6 @@
   channel = "stable-24.05"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
   packages = [
-    pkgs.cargo
-    pkgs.rustc
     pkgs.rustup
     pkgs.rustfmt
     pkgs.stdenv.cc
@@ -27,7 +25,7 @@
     ];
     workspace = {
       onCreate = {
-        rustup-default-stable = "rustup default stable";
+        rustup-update-stable = "rustup update stable";
         # Open editors for the following files by default, if they exist:
         default.openFiles = ["src/main.rs"];
       };
